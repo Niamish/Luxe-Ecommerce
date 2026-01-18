@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Toggle Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: system-ui, -apple-system, sans-serif;
+            transition: background-color 0.3s ease;
+        }
+        
+        .dark {
+            background-color: #030014;
+            color: white;
+        }
+        
+        .light {
+            background-color: #ffffff;
+            color: black;
+        }
+        
+        .header {
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .dark .logo {
+            background: linear-gradient(135deg, #c4b5fd, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: #c4b5fd;
+        }
+        
+        .light .logo {
+            background: linear-gradient(135deg, #7c3aed, #6b33d0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: #7c3aed;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            background: #8b5cf6;
+            color: white;
+            transition: transform 0.2s;
+        }
+        
+        button:hover {
+            transform: scale(1.05);
+        }
+        
+        .info {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body class="dark">
+    <div class="header">
+        <span class="logo">LUXE</span>
+    </div>
+    
+    <button onclick="toggleTheme()">Toggle Theme</button>
+    
+    <div class="info">
+        <h3>Fix Applied:</h3>
+        <ul>
+            <li>Added inline-block display to ensure proper rendering</li>
+            <li>Added fallback color property for browsers that don't support gradient text</li>
+            <li>Added smooth transition for theme changes</li>
+            <li>Adjusted z-index from z-[100] to z-50 to prevent layering issues</li>
+        </ul>
+    </div>
+    
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            if (body.classList.contains('dark')) {
+                body.classList.remove('dark');
+                body.classList.add('light');
+            } else {
+                body.classList.remove('light');
+                body.classList.add('dark');
+            }
+        }
+    </script>
+</body>
+</html>
