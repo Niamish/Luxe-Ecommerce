@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 
 // Context Providers
 import { ThemeProvider } from './context/ThemeContext';
@@ -28,7 +28,7 @@ import SizeGuidePage from './pages/SizeGuidePage';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ThemeProvider>
         <ProductProvider>
           <CartProvider>
@@ -62,7 +62,7 @@ function App() {
           </CartProvider>
         </ProductProvider>
       </ThemeProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
